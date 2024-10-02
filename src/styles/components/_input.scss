@@ -1,35 +1,37 @@
 .input_group {
   @apply flex flex-col space-y-2 w-full h-full relative;
+
   input {
-    @apply border-[1px] border-solid border-primary bg-white rounded-[10px] p-2 
-    hover:border-secondary focus:border-secondary focus:outline-none focus:ring-0
-      transition-all duration-200 ease-in-out text-black font-cairo disabled:hover:bg-gray-400 disabled:hover:border-gray-400 disabled:border-gray-400;
+    @apply border-[1px] border-solid border-primary bg-white rounded-[10px] p-2
+     hover:border-secondary focus:border-secondary focus:outline-none focus:ring-0 
+     transition-all duration-200 ease-in-out text-black font-cairo 
+     disabled:hover:bg-gray-400 disabled:hover:border-gray-400 disabled:border-gray-400;
   }
 
-  select{
-    @apply border-[1px] border-solid border-primary bg-white rounded-[10px] p-2 
-    hover:border-secondary focus:border-secondary focus:outline-none focus:ring-0
-      transition-all duration-200 ease-in-out text-black font-cairo;
+  select {
+    @apply border-[1px] border-solid border-primary bg-white rounded-[10px] p-2
+     hover:border-secondary focus:border-secondary focus:outline-none focus:ring-0 
+     transition-all duration-200 ease-in-out text-black font-cairo;
   }
 
   &__error {
-      @apply text-red-500 text-sm font-semibold font-cairo;
+    @apply text-red-500 text-sm font-semibold font-cairo;
   }
 
   label {
-    @apply text-white text-[16px] font-bold font-cairo ;
+    @apply text-black text-[16px] font-bold font-cairo;
   }
 
   &--text_input__icon {
-    @apply absolute top-[60%] transform -translate-y-1/2 right-2;
-
+    @apply absolute top-[60%] transform -translate-y-1/2;
+    
     svg {
       @apply w-6 h-6;
       cursor: pointer;
     }
   }
 
-  &--error{
+  &--error {
     input {
       @apply border-red-500;
     }
@@ -38,6 +40,48 @@
   &--disabled {
     input {
       @apply disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:hover:border-gray-400;
+    }
+  }
+}
+
+/* RTL Styles */
+[dir="rtl"] {
+  .input_group {
+    label {
+      @apply text-right;
+    }
+
+    &__error {
+      @apply text-right;
+    }
+
+    &--text_input__icon {
+      @apply left-2 right-auto;
+    }
+
+    input, select {
+      @apply text-right;
+    }
+  }
+}
+
+/* LTR Styles */
+[dir="ltr"] {
+  .input_group {
+    label {
+      @apply text-left;
+    }
+
+    &__error {
+      @apply text-left;
+    }
+
+    &--text_input__icon {
+      @apply right-2 left-auto;
+    }
+
+    input, select {
+      @apply text-left;
     }
   }
 }

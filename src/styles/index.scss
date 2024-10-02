@@ -40,3 +40,38 @@ html,body{
     @apply flex gap-5 w-full;
   }
 }
+
+
+.gradient{
+  background: linear-gradient(180deg, #F3FFFF 0%, #F7FFEE 100%);
+}
+
+.gradient2{
+  background: linear-gradient(248.03deg, rgba(167, 210, 69, 0.1) -15.77%, rgba(62, 204, 209, 0.1) 100.81%);
+}
+
+.gradient3{
+  background: linear-gradient(248.03deg, #A7D245 -15.77%, #3ECCD1 100.81%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+  height: auto;  /* This ensures horizontal scrollbars are not affected */
+}
+
+/* Track */
+::-webkit-scrollbar-track:vertical {
+  border-radius: 100vh;
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb:vertical {
+  background: linear-gradient(248.03deg, #A7D245 -15.77%, #3ECCD1 100.81%);
+}
+
+/* Optional: Hide horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+  display: none;
+}

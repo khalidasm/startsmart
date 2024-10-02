@@ -8,6 +8,7 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   disabled,
   isSubmitting,
+  ...props
 }) => {
   return (
     <button
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={variant}
       disabled={disabled || isSubmitting}
+      {...props}
     >
       {isSubmitting ? 
       <Loader />

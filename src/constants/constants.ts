@@ -15,6 +15,10 @@ export enum ButtonTypes {
 
 export enum ButtonVariants {
   PRIMARY = "btn btn--primary",
+  SECONDARY = "btn btn--secondary",
+  BLACK = "btn btn--black",
+  DANGER = "btn btn--danger",
+  OUTLINE = "btn btn--outline",
 }
 
 

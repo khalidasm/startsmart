@@ -1,14 +1,27 @@
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center w-full rounded-[10px] p-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:border-primary
-    hover:shadow-md hover:bg-secondary hover:border-white border-primary border-[1px] transition-all duration-200 ease-in-out font-cairo font-semibold text-lg;
-    ;
+    @apply inline-flex items-center justify-center w-full rounded-[10px] p-2
+           transition-all duration-200 ease-in-out
+           font-cairo font-semibold text-lg
+           disabled:opacity-50 disabled:cursor-not-allowed;
 
     &--primary {
-      @apply text-white font-bold text-lg bg-primary;
+      @apply text-white font-bold text-lg gradient3 hover:-translate-y-1 hover:shadow-lg hover:disabled:shadow-none hover:disabled:-translate-y-0;
+    }
+    
+    &--secondary {
+      @apply text-white font-bold text-lg bg-secondary;
     }
 
-    svg{
+    &--black {
+      @apply text-white font-bold text-lg bg-black;
+    }
+
+    &--danger {
+      @apply text-white font-bold text-lg bg-red-500;
+    }
+
+    svg {
       @apply w-8 h-8;
     }
   }
