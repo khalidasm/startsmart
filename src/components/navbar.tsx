@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <nav className={`px-3 shadow-md bg-white flex top-0 sm:p-2 md:py-2 md:px-4 w-full justify-between items-center z-10 ${language === LANGUAGE_OPTIONS.ARABIC ? 'flex-row-reverse' : ''}`}>
             <img
-                src="https://dcctxbum7ka52.cloudfront.net/wp-content/uploads/2023/11/StartSmart-Eng-logo.png"
+                src= {language === LANGUAGE_OPTIONS.ARABIC ? "https://www.startsmartsaudi.com/wp-content/uploads/2023/11/StartSmart-Ar-logo.png.webp":"https://dcctxbum7ka52.cloudfront.net/wp-content/uploads/2023/11/StartSmart-Eng-logo.png"} 
                 alt="StartSmart Logo"
                 className="h-20"
             />

@@ -60,6 +60,7 @@ const ConsultationList: React.FC<ConsultationListProps> = ({
         if (formik.values.consultancyslots.length > 0) {
             setSelectedSlots((prev) => {
                 const newSelectedSlots = { ...prev };
+                
                 consultations.map((consultation) => {
                     consultation.slots.map((slot) => {
                         if (formik.values.consultancyslots.includes(slot.id)) {
@@ -75,7 +76,9 @@ const ConsultationList: React.FC<ConsultationListProps> = ({
     return (
         <div className="w-full">
             <ul className="flex flex-col gap-5 py-5">
-                {consultations.map((consultation) => (
+                {consultations.sort(function(a, b) {
+    return (a.order - b.order);
+}).map((consultation) => (
                     <ConsultationItem
                         key={consultation.id}
                         consultation={consultation}
@@ -122,9 +125,6 @@ const ConsultationItem: React.FC<ConsultationItemProps> = ({
     
     }, [ref , selectedSlots]);
 
-
-    console.log(selectedSlots[consultation.id])
-
     return (
         <motion.li
             className={`flex flex-col justify-center gap-5 font-cairo ${
@@ -154,7 +154,7 @@ const ConsultationItem: React.FC<ConsultationItemProps> = ({
                             {isRTL ? consultation.type : consultation.type_en}
                         </p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    {/* <div className="flex items-center gap-2">
                         <ClipboardListIcon className="w-6 h-6 text-primary" />
                         <p className="text-black">
                             <span className="font-bold">
@@ -162,7 +162,7 @@ const ConsultationItem: React.FC<ConsultationItemProps> = ({
                             </span>{" "}
                             {isRTL ? consultation.title : consultation.title_en}
                         </p>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-2">
                         <ClockIcon className="w-6 h-6 text-primary" />
                         <p className="text-black">
@@ -180,7 +180,7 @@ const ConsultationItem: React.FC<ConsultationItemProps> = ({
                             <span className="font-bold">
                                 {t("consultationList.workshopDate")}:
                             </span>{" "}
-                            {consultation.date}
+                            {isRTL ? consultation.date : consultation.date_en}
                         </p>
                     </div>
                 </div>

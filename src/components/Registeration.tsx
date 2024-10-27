@@ -62,7 +62,8 @@ const Registration: React.FC = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
             >
-                <div className="flex justify-center items-center relative h-full overflow-auto">
+               
+                <div className="flex justify-center items-center relative h-full overflow-auto gradient">
                     <RenderStep />
                 </div>
             </motion.div>
